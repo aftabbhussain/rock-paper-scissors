@@ -1,11 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
-    height: 100vb;
+    
+}
+.root{
+    display: flex;
+    flex-direction: column;
+} 
+.header{
+    height: 72px;
+    background-color: white;
+    border-bottom: 2px solid gray;
+    font-size: 48px;
+    font-weight: 900;
+    padding: 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+    
+}
+.scorecard{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 72px;
+    margin-top: 32px;
+   
+}
+.myscore,.computerscore{
+    width: 480px;
+    background-color: #FFDCDC;
+    height: 150px;
+    border-radius: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFFDD0;
-}
-.text{
-    font-size: 24px;
+    font-size: 72px;
     font-weight: 900;
+
+}
+.buttons{
+    display: flex;
+    margin-top: 32px;
+    width: 1032px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+#rock, #paper, #scissors{
+    background-color: #D6D85D;
+    flex: 1;
+    height: 300px;
+    border-radius: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size : contain;
+    
+}
+#rock {
+    background-image: url(images/rock.png);
+    background-size: auto;
+}
+#paper{
+    background-image: url(images/paper.png);
+
+}
+#scissors{
+    background-image: url(images/scissors.png);
+}
+#restart{
+    margin-top: 32px;
+    width: 1032px;
+    justify-content: center;
+    align-items: center;
+    background-color: #8A0000;
+    height: 72px;
+    border-radius: 60px;
+    display: flex;
+    font-size: 32px;
+    font-weight: 900;
+    color: white;
 }

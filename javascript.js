@@ -26,11 +26,11 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-for(let i = 1; i <= 5; i++){
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection.toLowerCase(),computerSelection.toLowerCase());
+// for(let i = 1; i <= 5; i++){
+//     const humanSelection = getHumanChoice();
+//     const computerSelection = getComputerChoice();
+//     playRound(humanSelection.toLowerCase(),computerSelection.toLowerCase());
 
-}
-console.log(`Human Score = ${humanScore}, Computer Score = ${computerScore}`);
+// }
+// console.log(`Human Score = ${humanScore}, Computer Score = ${computerScore}`);
 
