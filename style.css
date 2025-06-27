@@ -2,23 +2,20 @@
     margin: 0;
     padding: 0;
 }
-body{
-    
-}
 .root{
     display: flex;
     flex-direction: column;
 } 
 .header{
-    height: 72px;
+    height: 60px;
     background-color: white;
-    border-bottom: 2px solid gray;
     font-size: 48px;
     font-weight: 900;
-    padding: 15px;
+    padding: 12px;
     justify-content: center;
     display: flex;
     align-items: center;
+    color: black;
 }
 .content{
     display: flex;
