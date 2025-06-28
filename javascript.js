@@ -1,36 +1,64 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(){
     const x = Math.random();
     if(x <= 0.33) return "rock";
     else if(x <= 0.66) return "paper";
     else return "scissors";
 }
-function getHumanChoice(){
-    const choice = prompt("Enter your choice ");
-    return choice;
-}
-
-let humanScore = 0;
-let computerScore = 0;
 
 function playRound(humanChoice, computerChoice){
+    const header = document.querySelector(".header");
     if(humanChoice == "rock" && computerChoice == "scissors" || humanChoice == "paper" && computerChoice == "rock" || humanChoice == "scissors" && computerChoice == "paper"){
-        console.log(`You won! ${humanChoice} beats ${computerChoice}.`);
+        header.textContent = `You won! ${humanChoice} beats ${computerChoice}.`
         humanScore++;
     }
     else if(humanChoice == computerChoice){
-        console.log("It's a draw!");
+        header.textContent = `It's a draw! Computer also chose ${computerChoice}.`;
     }
     else{
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+        header.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
         computerScore++;
     }
 }
 
-// for(let i = 1; i <= 5; i++){
-//     const humanSelection = getHumanChoice();
-//     const computerSelection = getComputerChoice();
-//     playRound(humanSelection.toLowerCase(),computerSelection.toLowerCase());
 
-// }
-// console.log(`Human Score = ${humanScore}, Computer Score = ${computerScore}`);
+const buttons = document.querySelector("#buttons");
+buttons.addEventListener("click",(event) => {
 
+    const result = document.querySelector("#result");
+    if(computerScore == 5 && humanScore < 5){
+        result.textContent = "You Lose!";
+        computerScore = 0;
+        humanScore = 0;
+    }
+    else if(computerScore < 5 && humanScore == 5){
+        result.textContent = "You Won!";
+        computerScore = 0;
+        humanScore = 0;
+    }
+    else{
+        let target = event.target;
+        if(target.id == "rock"){
+            const humanSelection = "rock";
+            const computerSelection = getComputerChoice();
+            playRound(humanSelection, computerSelection);
+        }
+        else if(target.id == "paper"){
+            const humanSelection = "paper";
+            const computerSelection = getComputerChoice();
+            playRound(humanSelection, computerSelection);
+        }
+        else{
+            const humanSelection = "scissors";
+            const computerSelection = getComputerChoice();
+            playRound(humanSelection, computerSelection);
+        }
+        const myscore = document.querySelector(".myscore");
+        const compScore = document.querySelector(".computerscore");
+
+        myscore.textContent = humanScore;
+        compScore.textContent = computerScore;
+    }
+});

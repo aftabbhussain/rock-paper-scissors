@@ -43,7 +43,7 @@
     font-weight: 900;
 
 }
-.buttons{
+#buttons{
     display: flex;
     margin-top: 32px;
     width: 1032px;
@@ -73,7 +73,7 @@
 #scissors{
     background-image: url(images/scissors.png);
 }
-#restart{
+#result{
     margin-top: 32px;
     width: 1032px;
     justify-content: center;
